@@ -20,7 +20,7 @@ neoForge {
     version = "21.1.225"
     runs {
         client {
-            workingDirectory project.file('run')
+            client()
         }
     }
     mods {
