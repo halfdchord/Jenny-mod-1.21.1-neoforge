@@ -2,4 +2,4 @@
 Ah, fuck it. Forge is dead, neoforge is the goat. And the goat of sex mods should also get a feature! Some stuff might be gone too, but eh.
 
 
-THIS IS WIP - I STILL GOTTA ACTUALLY MAKE IT HAPPY WITH NEOFORGE LOLOL
+Soo now i finally have the gradle wrapper, it's time to actually port shit.
