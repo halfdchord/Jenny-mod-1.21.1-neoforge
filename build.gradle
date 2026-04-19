@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.neoforged.net' }
         mavenCentral()
     }
     dependencies {
@@ -13,7 +13,7 @@ plugins {
     id 'idea'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'net.neoforged.gradle.userdev'
 
 group = 'com.schnurritv'
 version = '1.8.0-1.21.1'
@@ -26,19 +26,16 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
-minecraft {
-    mappings channel: 'official', version: '1.21.1'
-    copyIdeResources = true
+neoForge {
+    version = "21.1.225"
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                sexmod {
-                    source sourceSets.main
-                }
-            }
+        }
+    }
+    mods {
+        sexmod {
+            sourceSet sourceSets.main
         }
     }
 }
@@ -50,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.neoforged:neoforge:1.21.1-52.0.7'
+    implementation 'net.neoforged:neoforge:21.1.225'
     implementation fg.deobf('software.bernie.geckolib:geckolib-neoforge-1.21.1:4.6.6')
 }
 
