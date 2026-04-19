@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+        classpath group: 'net.neoforged.gradle', name: 'NeoforgedGradle', version: '6.0.+', changing: true
     }
 }
 
@@ -50,8 +50,8 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.21.1-52.0.7'
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.21.1:4.6.6')
+    minecraft 'net.neoforged:neoforge:1.21.1-52.0.7'
+    implementation fg.deobf('software.bernie.geckolib:geckolib-neoforge-1.21.1:4.6.6')
 }
 
 tasks.named('jar', Jar).configure {
