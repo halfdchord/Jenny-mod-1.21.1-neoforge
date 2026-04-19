@@ -1,0 +1,21 @@
+{
+  "itemGroup.sexmod": "性別変更",
+  "item.sexmod.jenny_spawn_egg": "ジェニーの卵",
+  "item.sexmod.ellie_spawn_egg": "エリーの卵",
+  "item.sexmod.slime_spawn_egg": "スライム娘の卵",
+  "item.sexmod.bee_spawn_egg": "蜂の卵",
+  "item.sexmod.bia_spawn_egg": "ビアの卵",
+  "item.sexmod.allie_spawn_egg": "カミの卵",
+  "item.sexmod.goblin_spawn_egg": "ゴブリンの卵",
+  "item.sexmod.kobold_spawn_egg": "女竜の卵",
+  "item.sexmod.cat_spawn_egg": "猫の卵",
+  "entity.sexmod.jenny": "ジェニー",
+  "entity.sexmod.ellie": "エリー",
+  "entity.sexmod.slime": "スライム娘",
+  "entity.sexmod.bee": "蜂",
+  "entity.sexmod.bia": "ビア",
+  "entity.sexmod.allie": "カミ",
+  "entity.sexmod.goblin": "ゴブリン",
+  "entity.sexmod.kobold": "女竜",
+  "entity.sexmod.cat": "猫女"
+}
