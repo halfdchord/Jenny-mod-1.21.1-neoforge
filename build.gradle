@@ -1,19 +1,9 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.neoforged.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'net.neoforged.gradle:userdev:7.0.+'
-    }
-}
-
 plugins {
+    id 'java'
     id 'eclipse'
     id 'idea'
+    id 'net.neoforged.moddev' version '2.0.28'
 }
-
-apply plugin: 'net.neoforged.gradle.userdev'
 
 group = 'com.schnurritv'
 version = '1.8.0-1.21.1'
