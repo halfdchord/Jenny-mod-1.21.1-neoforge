@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
     implementation 'net.neoforged:neoforge:21.1.225'
-    implementation fg.deobf('software.bernie.geckolib:geckolib-neoforge-1.21.1:4.6.6')
+    implementation 'software.bernie.geckolib:geckolib-neoforge-1.21.1:4.7'
 }
 
 tasks.named('jar', Jar).configure {
