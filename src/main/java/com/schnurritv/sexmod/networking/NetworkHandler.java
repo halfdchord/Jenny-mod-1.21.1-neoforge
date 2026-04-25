@@ -3,9 +3,9 @@ package com.schnurritv.sexmod.networking;
 import com.schnurritv.sexmod.Main;
 import com.schnurritv.sexmod.entity.SexEntity;
 import com.schnurritv.sexmod.entity.SexModAnimation;
-import net.minecraftforge.network.ChannelBuilder;
-import net.minecraftforge.network.NetworkDirection;
-import net.minecraftforge.network.SimpleChannel;
+import net.neoforged.neoforge.network.ChannelBuilder;
+import net.neoforged.neoforge.network.NetworkDirection;
+import net.neoforged.neoforge.network.SimpleChannel;
 
 public class NetworkHandler {
     private static final int VERSION = 1;
@@ -34,14 +34,14 @@ public class NetworkHandler {
     }
 
     public static void broadcastAnimationSync(SexEntity entity, SexModAnimation animation) {
-        INSTANCE.send(new AnimationSyncPacket(entity.getId(), animation.name()), net.minecraftforge.network.PacketDistributor.TRACKING_ENTITY.with(entity));
+        INSTANCE.send(new AnimationSyncPacket(entity.getId(), animation.name()), net.neoforged.neoforge.network.PacketDistributor.TRACKING_ENTITY.with(entity));
     }
 
     public static void sendMovementStateUpdate(int entityId, String state) {
-        INSTANCE.send(new MovementStatePacket(entityId, state), net.minecraftforge.network.PacketDistributor.SERVER.noArg());
+        INSTANCE.send(new MovementStatePacket(entityId, state), net.neoforged.neoforge.network.PacketDistributor.SERVER.noArg());
     }
 
     public static void sendSceneAction(int entityId, String action) {
-        INSTANCE.send(new SceneActionPacket(entityId, action), net.minecraftforge.network.PacketDistributor.SERVER.noArg());
+        INSTANCE.send(new SceneActionPacket(entityId, action), net.neoforged.neoforge.network.PacketDistributor.SERVER.noArg());
     }
 }
