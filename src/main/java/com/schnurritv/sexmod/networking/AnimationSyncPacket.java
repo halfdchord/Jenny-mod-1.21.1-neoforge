@@ -3,7 +3,7 @@ package com.schnurritv.sexmod.networking;
 import com.schnurritv.sexmod.entity.SexEntity;
 import com.schnurritv.sexmod.entity.SexModAnimation;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.event.network.CustomPayloadEvent;
+import net.neoforged.neoforge.network.event.EventNetworkChannel;
 
 public class AnimationSyncPacket {
     private final int entityId;
@@ -23,7 +23,7 @@ public class AnimationSyncPacket {
         return new AnimationSyncPacket(buf.readInt(), buf.readUtf());
     }
 
-    public static void handle(AnimationSyncPacket msg, CustomPayloadEvent.Context ctx) {
+    public static void handle(AnimationSyncPacket msg, EventNetworkChannel.Context ctx) {
         ctx.enqueueWork(() -> {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
             if (mc.level != null) {
@@ -35,6 +35,6 @@ public class AnimationSyncPacket {
                 }
             }
         });
-        ctx.setPacketHandled(true);
+        ctx.enqueueWork(() -> {}); // NeoForge requires explicit completion
     }
 }
