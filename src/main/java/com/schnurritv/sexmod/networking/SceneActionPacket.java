@@ -4,7 +4,7 @@ import com.schnurritv.sexmod.entity.SexEntity;
 import com.schnurritv.sexmod.entity.SexModAnimation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.event.network.CustomPayloadEvent;
+import net.neoforged.neoforge.network.event.EventNetworkChannel;
 
 public class SceneActionPacket {
     private final int entityId;
@@ -24,7 +24,7 @@ public class SceneActionPacket {
         return new SceneActionPacket(buf.readInt(), buf.readUtf());
     }
 
-    public static void handle(SceneActionPacket msg, CustomPayloadEvent.Context ctx) {
+    public static void handle(SceneActionPacket msg, EventNetworkChannel.Context ctx) {
         ctx.enqueueWork(() -> {
             ServerPlayer player = ctx.getSender();
             if (player != null) {
@@ -64,6 +64,5 @@ public class SceneActionPacket {
                 }
             }
         });
-        ctx.setPacketHandled(true);
     }
 }
