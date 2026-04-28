@@ -3,7 +3,7 @@ package com.schnurritv.sexmod.networking;
 import com.schnurritv.sexmod.entity.SexEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.event.network.CustomPayloadEvent;
+import net.neoforged.neoforge.network.event.EventNetworkChannel;
 
 public class MovementStatePacket {
     private final int entityId;
@@ -23,7 +23,7 @@ public class MovementStatePacket {
         return new MovementStatePacket(buf.readInt(), buf.readUtf());
     }
 
-    public static void handle(MovementStatePacket msg, CustomPayloadEvent.Context ctx) {
+    public static void handle(MovementStatePacket msg, EventNetworkChannel.Context ctx) {
         ctx.enqueueWork(() -> {
             ServerPlayer player = ctx.getSender();
             if (player != null) {
@@ -36,6 +36,5 @@ public class MovementStatePacket {
                 }
             }
         });
-        ctx.setPacketHandled(true);
     }
 }
